@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">CodeWiz</h2>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <input
+            class="srch"
+            type="search"
+            name=""
+            placeholder="Type to text"
+          />
+          <a href="#"><button class="btn">Search</button></a>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>
+          Welcome <br />To My<br />Full Stack Java <br />Developer Portfolio!
+        </h1>
+        <p class="par">
+          Hello there! I'm Sthembiso Perseverance, a passionate Full Stack Java
+          Developer <br />
+          with a knack for turning ideas into high-quality, scalable software
+          solutions. <br />
+          With a strong foundation in both front-end and back-end technologies,
+          I bring a holistic approach to web development.
+        </p>
+        <div class="message">
+            <h2>Portfolio Under Constraction Stay Tuned!!</h2>
+
+        </div>
+
+        <div class="icon">
+          <a href="#"><icon name="logo-facebook"></icon></a>
+          <a href="#"><icon name="logo-whatsapp"></icon></a>
+          <a href="#"><icon name="logo-instagram"></icon></a>
+          <a href="#"><icon name="logo-linkedin"></icon></a>
+        </div>
+       
+      </div>
+       <div class="icon">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="countdown" id="countdown">
+            <span class="countdown-item" id="days"></span>
+            <span class="countdown-item" id="hours"></span>
+            <span class="countdown-item" id="minutes"></span>
+            <span class="countdown-item" id="seconds"></span>
+        </div>
+    
+        <script>
+            // Set the date 4 days from now
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 4);
+    
+            // Update the countdown every second
+            const x = setInterval(function() {
+                // Get the current date and time
+                const now = new Date().getTime();
+    
+                // Calculate the time remaining
+                const distance = countdownDate - now;
+    
+                // Calculate days, hours, minutes, and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                // Display the countdown
+                document.getElementById('days').innerHTML = `${days}d`;
+                document.getElementById('hours').innerHTML = `${hours}h`;
+                document.getElementById('minutes').innerHTML = `${minutes}m`;
+                document.getElementById('seconds').innerHTML = `${seconds}s`;
+    
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById('countdown').innerHTML = 'EXPIRED';
+                }
+            }, 1000);
+        </script>
+ 
+    </div>
+  </body>
+</html>
